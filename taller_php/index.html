@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirección PHP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .redirect-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-box">
+        <h1>Redirección en curso...</h1>
+        <p>Por favor, espera un momento mientras te redirigimos.</p>
+
+        <script>
+            setTimeout(function() {
+                window.location.href = 'php/index.php';
+            }, 1000);
+        </script>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Redirección PHP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .redirect-box {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="redirect-box">
+    <h1>Redirección en curso...</h1>
+    <p>Por favor, espera un momento mientras te redirigimos.</p>
+
+    <?php
+        // Redirigir a otro archivo PHP después de 3 segundos
+        $url = 'otroarchivo.php';
+        $tiempo = 3; // segundos
+        echo "<p>Redirigiendo a <strong>$url</strong> en <strong>$tiempo</strong> segundos...</p>";
+        echo "<script>setTimeout(function () { window.location.href = '$url'; }, $tiempo * 1000);</script>";
+        ?>
+
+  </div>
+</body>
+
+</html>
